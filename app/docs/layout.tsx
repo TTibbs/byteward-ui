@@ -3,33 +3,7 @@ interface DocsLayoutProps {
 }
 
 import { SidebarNav } from "@/components/sidebar-nav";
-
-const sidebarNavItems = [
-  {
-    title: "Getting Started",
-    href: "/docs",
-    items: [
-      {
-        title: "Introduction",
-        href: "/docs",
-      },
-      {
-        title: "Installation",
-        href: "/installation",
-      },
-    ],
-  },
-  {
-    title: "Components",
-    href: "/docs/components",
-    items: [
-      {
-        title: "Infinite Marquee",
-        href: "/components/infinite-marquee",
-      },
-    ],
-  },
-];
+import { sidebarNavItems } from "@/lib/data";
 
 export default function DocsLayout({ children }: DocsLayoutProps) {
   return (

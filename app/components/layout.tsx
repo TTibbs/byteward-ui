@@ -1,39 +1,9 @@
 import { SidebarNav } from "@/components/sidebar-nav";
+import { sidebarNavItems } from "@/lib/data";
 
 interface ComponentsLayoutProps {
   children: React.ReactNode;
 }
-
-const sidebarNavItems = [
-  {
-    title: "Getting Started",
-    href: "/docs",
-    items: [
-      {
-        title: "Introduction",
-        href: "/docs",
-      },
-      {
-        title: "Installation",
-        href: "/installation",
-      },
-    ],
-  },
-  {
-    title: "Components",
-    href: "/docs/components",
-    items: [
-      {
-        title: "Infinite Marquee",
-        href: "/components/infinite-marquee",
-      },
-      {
-        title: "Grid Beams",
-        href: "/components/grid-beams",
-      },
-    ],
-  },
-];
 
 export default function ComponentsLayout({ children }: ComponentsLayoutProps) {
   return (
