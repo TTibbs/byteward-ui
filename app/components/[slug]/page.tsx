@@ -1,12 +1,11 @@
 import React from "react";
-import { notFound } from "next/navigation";
 import CodeBlock from "@/components/ui/codeblock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ComponentExample, ComponentProp } from "@/types/components";
 import { COMPONENT_MAP } from "@/lib/components-registry";
 
 export function generateStaticParams() {
-  return Object.keys(COMPONENT_MAP).map((slug) => ({
+  return Object.keys(COMPONENT_MAP).map((slug: string) => ({
     slug,
   }));
 }
@@ -19,10 +18,6 @@ interface Props {
 
 export default async function SingleComponentPage({ params }: Props) {
   const component = COMPONENT_MAP[params.slug];
-
-  if (!component) {
-    notFound();
-  }
 
   return (
     <div className="space-y-8 pb-12">

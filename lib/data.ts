@@ -56,11 +56,9 @@ export const servicesGrid = [
   },
 ];
 
-// Unified sidebar navigation configuration
 export const sidebarNavItems = [
   {
     title: "Getting Started",
-    href: "/docs",
     items: [
       {
         title: "Introduction",
@@ -74,23 +72,41 @@ export const sidebarNavItems = [
   },
   {
     title: "Components",
-    href: "/docs/components",
-    items: [
+    sections: [
       {
-        title: "Infinite Marquee",
-        href: "/components/infinite-marquee",
+        subtitle: "Displays",
+        items: [
+          {
+            title: "Infinite Marquee",
+            href: "/components/infinite-marquee",
+          },
+          {
+            title: "Grid Beams",
+            href: "/components/grid-beams",
+          },
+        ],
       },
       {
-        title: "Grid Beams",
-        href: "/components/grid-beams",
+        subtitle: "Inputs",
+        items: [
+          {
+            title: "MacBook Keyboard",
+            href: "/components/macbook-keyboard",
+          },
+        ],
       },
     ],
   },
 ];
 
-// Utility function to filter sidebar items by section if needed
 export const getSidebarItemsBySection = (section: "docs" | "components") => {
-  // For now, we return all items since the sidebar is unified
-  // This can be extended later if you want to filter items by section
-  return sidebarNavItems;
+  return sidebarNavItems.filter((item) => {
+    if (section === "docs" && item.title === "Getting Started") {
+      return true;
+    }
+    if (section === "components" && item.title === "Components") {
+      return true;
+    }
+    return false;
+  });
 };

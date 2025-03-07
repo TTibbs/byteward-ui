@@ -1,6 +1,7 @@
+import { ComponentDoc } from "@/types/components";
 import InfiniteMarquee from "@/components/infinite-marquee";
 import GridBeams from "@/components/grid-beams";
-import { ComponentDoc } from "@/types/components";
+import MacBookKeyboard from "@/components/macbook-keyboard";
 
 export type ComponentRegistry = {
   [key: string]: {
@@ -357,5 +358,130 @@ export const COMPONENT_MAP: Record<string, ComponentDoc> = {
       },
     ],
   },
-  // Add more components here as needed
+  "macbook-keyboard": {
+    title: "Macbook Keyboard",
+    description: "A MacBook Keyboard built using Tailwind CSS",
+    usage: `import { MacBookKeyboard } from "@/components/macbook-keyboard"
+
+<MacBookKeyboard />`,
+    props: [
+      {
+        name: "keyColor",
+        type: "string",
+        default: "bg-gray-900",
+        description: "Tailwind class or CSS color value for the keys",
+      },
+      {
+        name: "textColor",
+        type: "string",
+        default: "text-gray-200",
+        description: "Tailwind class or CSS color value for the text",
+      },
+      {
+        name: "glowColor",
+        type: "string",
+        default: "rgba(102, 187, 255, 0.7)",
+        description: "Tailwind class or CSS color value for the glow",
+      },
+      {
+        name: "buttonBgColor",
+        type: "string",
+        default: "None",
+        description: "Tailwind class or CSS color value for the buttons",
+      },
+      {
+        name: "className",
+        type: "string",
+        default: "None",
+        description: "Tailwind class for additional styling",
+      },
+    ],
+    examples: [
+      {
+        name: "Default",
+        description: "MacBook Keyboard",
+        code: `import { MacBookKeyboard } from "@/components/macbook-keyboard"
+    
+<MacBookKeyboard />`,
+        component: <MacBookKeyboard />,
+      },
+      {
+        name: "Tailwind Classes",
+        description: "Styling the keyboard with Tailwind classes",
+        code: `import { MacBookKeyboard } from "@/components/macbook-keyboard"
+    
+<MacBookKeyboard 
+  keyColor="bg-red-500" 
+  buttonBgColor="bg-red-600"
+  textColor="text-indigo-100" 
+  glowColor="rgba(129, 140, 248, 0.7)" />`,
+        component: (
+          <MacBookKeyboard
+            keyColor="bg-red-500"
+            buttonBgColor="bg-red-600"
+            textColor="text-indigo-100"
+            glowColor="rgba(129, 140, 248, 0.7)"
+          />
+        ),
+      },
+      {
+        name: "CSS Color Values",
+        description: "Using direct CSS color values for more flexibility",
+        code: `import { MacBookKeyboard } from "@/components/macbook-keyboard"
+    
+<MacBookKeyboard 
+  keyColor="#4a6274" 
+  buttonBgColor="#f9ddd2"
+  textColor="#000000" 
+  glowColor="rgba(226, 232, 240, 0.7)" />`,
+        component: (
+          <MacBookKeyboard
+            keyColor="#4a6274"
+            buttonBgColor="#f9ddd2"
+            textColor="#000000"
+            glowColor="rgba(226, 232, 240, 0.7)"
+          />
+        ),
+      },
+      {
+        name: "Custom Button Colors",
+        description: "Using different colors for keyboard and buttons",
+        code: `import { MacBookKeyboard } from "@/components/macbook-keyboard"
+    
+<MacBookKeyboard 
+  keyColor="#F5D042"
+  buttonBgColor="#0A174E" 
+  textColor="white" 
+  glowColor="rgba(124, 58, 237, 0.7)" />`,
+        component: (
+          <MacBookKeyboard
+            keyColor="#F5D042"
+            buttonBgColor="#0A174E"
+            textColor="white"
+            glowColor="rgba(124, 58, 237, 0.7)"
+          />
+        ),
+      },
+      {
+        name: "Colorful Buttons",
+        description: "Vibrant customization with different button color",
+        code: `import { MacBookKeyboard } from "@/components/macbook-keyboard"
+    
+<MacBookKeyboard 
+  keyColor="#2d1b4e" 
+  buttonBgColor="#6d28d9" 
+  textColor="white" 
+  glowColor="rgba(124, 58, 237, 0.7)" />`,
+        component: (
+          <MacBookKeyboard
+            keyColor="#2d1b4e"
+            buttonBgColor="#00B606"
+            textColor="white"
+            glowColor="rgba(124, 58, 237, 0.7)"
+          />
+        ),
+      },
+    ],
+  },
+  // Note to self, it's here to add more components
 };
