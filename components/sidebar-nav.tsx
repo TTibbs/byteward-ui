@@ -44,7 +44,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
       </Sheet>
 
       {/* Desktop Navigation */}
-      <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] md:block">
+      <aside className="fixed top-20 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] md:block">
         <div className="relative h-full">
           {/* Sidebar Content with Toggle Button */}
           <div
@@ -67,7 +67,7 @@ export function SidebarNav({ items }: SidebarNavProps) {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-3 top-4 h-8 w-8"
+              className="absolute right-3 top-6 h-8 w-8"
               onClick={() => setIsExpanded(!isExpanded)}
             >
               {isExpanded ? (

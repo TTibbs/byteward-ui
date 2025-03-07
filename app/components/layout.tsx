@@ -15,7 +15,7 @@ const sidebarNavItems = [
       },
       {
         title: "Installation",
-        href: "/docs/installation",
+        href: "/installation",
       },
     ],
   },
@@ -26,6 +26,10 @@ const sidebarNavItems = [
       {
         title: "Infinite Marquee",
         href: "/components/infinite-marquee",
+      },
+      {
+        title: "Grid Beams",
+        href: "/components/grid-beams",
       },
     ],
   },

@@ -15,7 +15,8 @@ export type ComponentExample = {
   name: string;
   description: string;
   code: string;
-  component: React.ReactNode;
+  component: React.ReactNode | React.ComponentType<any>;
+  props?: Record<string, any>;
 };
 
 // Define component prop type
@@ -28,9 +29,12 @@ export type ComponentProp = {
 
 // Define component documentation type
 export type ComponentDoc = {
+  name?: string;
   title: string;
   description: string;
-  usage: string;
+  usage?: string;
   props?: ComponentProp[];
   examples?: ComponentExample[];
+  component?: React.ReactNode | React.ComponentType<any>;
+  code?: string;
 };

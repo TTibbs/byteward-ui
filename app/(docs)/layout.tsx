@@ -15,7 +15,7 @@ const sidebarNavItems = [
       },
       {
         title: "Installation",
-        href: "/docs/installation",
+        href: "/installation",
       },
     ],
   },
