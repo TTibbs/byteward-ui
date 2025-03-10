@@ -65,8 +65,8 @@ export const sidebarNavItems = [
         href: "/docs",
       },
       {
-        title: "Installation",
-        href: "/docs/installation",
+        title: "How to use",
+        href: "/docs/how-to-use",
       },
     ],
   },
@@ -81,8 +81,12 @@ export const sidebarNavItems = [
             href: "/components/infinite-marquee",
           },
           {
-            title: "Grid Beams",
-            href: "/components/grid-beams",
+            title: "Infinite Card Marquee",
+            href: "/components/infinite-card-marquee",
+          },
+          {
+            title: "Perspective Card",
+            href: "/components/perspective-card",
           },
         ],
       },
@@ -92,6 +96,15 @@ export const sidebarNavItems = [
           {
             title: "MacBook Keyboard",
             href: "/components/macbook-keyboard",
+          },
+        ],
+      },
+      {
+        subtitle: "Backgrounds",
+        items: [
+          {
+            title: "Grid Beams",
+            href: "/components/grid-beams",
           },
         ],
       },

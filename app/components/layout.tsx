@@ -1,9 +1,18 @@
 import { SidebarNav } from "@/components/sidebar-nav";
 import { sidebarNavItems } from "@/lib/data";
+import type { Metadata } from "next";
 
 interface ComponentsLayoutProps {
   children: React.ReactNode;
 }
+
+export const metadata: Metadata = {
+  title: {
+    default: "Components",
+    template: "%s | ByteWard UI",
+  },
+  description: "Explore our component library",
+};
 
 export default function ComponentsLayout({ children }: ComponentsLayoutProps) {
   return (

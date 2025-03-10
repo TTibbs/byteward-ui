@@ -118,7 +118,7 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
     <div className="grid grid-flow-row auto-rows-max text-sm gap-4">
       {items.map((item, index) => (
         <div key={index} className="relative overflow-hidden">
-          <h4 className="text-md font-semibold mb-3">{item.title}</h4>
+          <h4 className="text-md pl-2 font-semibold mb-3">{item.title}</h4>
 
           {item.items?.length && (
             <div className="grid grid-flow-row auto-rows-max pl-2 text-sm gap-1.5">
@@ -140,7 +140,7 @@ export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
           )}
 
           {item.sections?.length && (
-            <div className="grid grid-flow-row auto-rows-max pl-2 text-sm gap-6 mt-2">
+            <div className="grid grid-flow-row auto-rows-max pl-2 text-sm gap-2 mt-2">
               {item.sections.map((section, sectionIndex) => {
                 const sectionKey = `${item.title}-${section.subtitle}-${sectionIndex}`;
                 const isExpanded = isSectionExpanded(sectionKey);

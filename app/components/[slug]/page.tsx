@@ -4,6 +4,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ComponentExample, ComponentProp } from "@/types/components";
 import { COMPONENT_MAP } from "@/lib/components-registry";
 
+export async function getStaticPaths() {
+  const paths = Object.keys(COMPONENT_MAP).map((slug: string) => ({
+    params: { slug },
+  }));
+  return { paths, fallback: false };
+}
+
 export function generateStaticParams() {
   return Object.keys(COMPONENT_MAP).map((slug: string) => ({
     slug,
@@ -17,7 +24,8 @@ interface Props {
 }
 
 export default async function SingleComponentPage({ params }: Props) {
-  const component = COMPONENT_MAP[params.slug];
+  const { slug } = await params;
+  const component = COMPONENT_MAP[slug];
 
   return (
     <div className="space-y-8 pb-12">

@@ -1,6 +1,9 @@
-import type { Config } from "tailwindcss";
+const {
+  default: flattenColorPalette,
+} = require("tailwindcss/lib/util/flattenColorPalette");
 
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -82,6 +85,18 @@ const config: Config = {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "marquee-reverse": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0%)" },
+        },
+        "marquee-vertical": {
+          "0%": { transform: "translateY(0%)" },
+          "100%": { transform: "translateY(-50%)" },
+        },
+        "marquee-vertical-reverse": {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -89,9 +104,31 @@ const config: Config = {
         "marquee-slow": "marquee 40s linear infinite",
         marquee: "marquee 25s linear infinite",
         "marquee-fast": "marquee 15s linear infinite",
+        "marquee-slow-reverse": "marquee-reverse 40s linear infinite",
+        "marquee-reverse": "marquee-reverse 25s linear infinite",
+        "marquee-fast-reverse": "marquee-reverse 15s linear infinite",
+        "marquee-vertical-slow": "marquee-vertical 40s linear infinite",
+        "marquee-vertical": "marquee-vertical 25s linear infinite",
+        "marquee-vertical-fast": "marquee-vertical 15s linear infinite",
+        "marquee-vertical-slow-reverse":
+          "marquee-vertical-reverse 40s linear infinite",
+        "marquee-vertical-reverse":
+          "marquee-vertical-reverse 25s linear infinite",
+        "marquee-vertical-fast-reverse":
+          "marquee-vertical-reverse 15s linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), addVariablesForColors],
 };
-export default config;
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}

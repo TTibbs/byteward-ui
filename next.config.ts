@@ -8,6 +8,13 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        hostname: "dtsjrc96mj.ufs.sh",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
